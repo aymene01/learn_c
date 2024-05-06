@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-const int NUM_TO_GUESS = 10;
+#define NUM_TO_GUESS 10
 
 int main(void)
 {
