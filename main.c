@@ -12,7 +12,6 @@ int main(void)
         printf("Choose a number: ");
         scanf("%d", &guess);
         if (guess == NUM_TO_GUESS) {
-            count++;
             isWinning = 1;
         } else if (guess > NUM_TO_GUESS) {
             printf("To hight \n");
