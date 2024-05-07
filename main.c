@@ -56,9 +56,10 @@ void createNewFile() {
     printf("Successfully created a new file at %s\n", path);
 }
 
+
 int main(void) {
     int array[] = {1, 2};
-    int length = sizeof(array) / sizeof(array[0]);
+    const int length = sizeof(array) / sizeof(array[0]);
 
     squaredArray(array, length);
 
