@@ -3,20 +3,26 @@
 #include <unistd.h>
 
 #define NUM_TO_GUESS 10
+#define MAX_LEN_SIZE 256
+#define BASE_PATH "../"
 
 void guessGame() {
     int guess;
     int isWinning = -1;
     int count = 0;
 
-    while (isWinning == -1) {
+    while (isWinning == -1)
+    {
         printf("Choose a number: ");
         scanf("%d", &guess);
-        if (guess == NUM_TO_GUESS) {
+        if (guess == NUM_TO_GUESS)
+        {
             isWinning = 1;
-        } else if (guess > NUM_TO_GUESS) {
+        } else if (guess > NUM_TO_GUESS)
+        {
             printf("To hight \n");
-        } else {
+        } else
+        {
             printf("To low \n");
         }
         count++;
@@ -25,13 +31,12 @@ void guessGame() {
 }
 
 void squaredArray(int array[], int length) {
-    for (int i = 0; i < length; i++) {
+    for (int i = 0; i < length; i++)
+    {
         array[i] = array[i] * array[i];
     }
 }
 
-#define MAX_LEN_SIZE 256
-#define BASE_PATH "../"
 
 void createNewFile() {
     char name[MAX_LEN_SIZE];
@@ -44,7 +49,8 @@ void createNewFile() {
 
     FILE *file = fopen(path, "w");
 
-    if (file == NULL) {
+    if (file == NULL)
+    {
         printf("Error: Could not open file for writing.\n");
         return;
     }
@@ -63,7 +69,8 @@ int main(void) {
     createNewFile();
 
 
-    for (int i = 0; i < sizeof(array) / sizeof(array[0]); i++) {
+    for (int i = 0; i < sizeof(array) / sizeof(array[0]); i++)
+    {
         printf("%d \n", array[i]);
     }
 
