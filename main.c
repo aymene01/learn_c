@@ -15,14 +15,11 @@ void guessGame() {
     {
         printf("Choose a number: ");
         scanf("%d", &guess);
-        if (guess == NUM_TO_GUESS)
-        {
+        if (guess == NUM_TO_GUESS) {
             isWinning = 1;
-        } else if (guess > NUM_TO_GUESS)
-        {
+        } else if (guess > NUM_TO_GUESS) {
             printf("To hight \n");
-        } else
-        {
+        } else {
             printf("To low \n");
         }
         count++;
@@ -49,8 +46,7 @@ void createNewFile() {
 
     FILE *file = fopen(path, "w");
 
-    if (file == NULL)
-    {
+    if (file == NULL) {
         printf("Error: Could not open file for writing.\n");
         return;
     }
@@ -67,7 +63,6 @@ int main(void) {
     squaredArray(array, length);
 
     createNewFile();
-
 
     for (int i = 0; i < sizeof(array) / sizeof(array[0]); i++)
     {
