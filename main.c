@@ -27,7 +27,7 @@ void guessGame() {
     printf("You won after %d try", count);
 }
 
-void squaredArray(int array[], int length) {
+void squaredArray(int array[], const int length) {
     for (int i = 0; i < length; i++)
     {
         array[i] = array[i] * array[i];
