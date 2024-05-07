@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 
 #define NUM_TO_GUESS 10
 
@@ -28,14 +30,41 @@ void squaredArray(int array[], int length) {
     }
 }
 
+#define MAX_LEN_SIZE 256
+#define BASE_PATH "../"
+
+void createNewFile() {
+    char name[MAX_LEN_SIZE];
+    printf("Enter a file name: ");
+    scanf("%s", name);
+
+    char path[MAX_LEN_SIZE + strlen(BASE_PATH) + 1];
+    strcpy(path, BASE_PATH);
+    strcat(path, name);
+
+    FILE *file = fopen(path, "w");
+
+    if (file == NULL) {
+        printf("Error: Could not open file for writing.\n");
+        return;
+    }
+
+    fprintf(file, "Hello, world!\n");
+    fclose(file);
+    printf("Successfully created a new file at %s\n", path);
+}
+
 int main(void) {
-    int array[2] = {1, 2};
+    int array[] = {1, 2};
     int length = sizeof(array) / sizeof(array[0]);
 
     squaredArray(array, length);
 
+    createNewFile();
+
+
     for (int i = 0; i < sizeof(array) / sizeof(array[0]); i++) {
-        printf("%d ", array[i]);
+        printf("%d \n", array[i]);
     }
 
     return 0;
